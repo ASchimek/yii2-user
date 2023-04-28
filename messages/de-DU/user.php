@@ -46,7 +46,7 @@ return array (
   'Yandex' => '',
   'Your account has been blocked.' => '',
   'Your account has been completely deleted' => '',
-  'Your account has been created and a message with further instructions has been sent to your email' => '',
+  'Your account has been created and a message with further instructions has been sent to your email' => 'Eine Aktivierungsnachricht wurde an Deine E-Mail Adresse versandt',
   'Your account on {0} has a new password' => '',
   'Your password on {0} has been changed' => '',
   '(not set)' => '(undefiniert)',
