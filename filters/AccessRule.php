@@ -37,7 +37,7 @@ class AccessRule extends \yii\filters\AccessRule
                     return true;
                 }
             } elseif ($role === 'admin') {
-                if (!\Yii::$app->user->isGuest && \Yii::$app->user->identity->isAdmin) {
+                if (!\Yii::$app->user->isGuest && \Yii::$app->user->identity->isSuperUser) {
                     return true;
                 }
             } elseif ($user->can($role)) {

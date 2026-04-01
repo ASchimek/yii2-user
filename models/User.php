@@ -28,6 +28,7 @@ use yii\helpers\ArrayHelper;
  * User ActiveRecord model.
  *
  * @property bool    $isAdmin
+ * @property bool    $isSuperUser
  * @property bool    $isBlocked
  * @property bool    $isConfirmed
  *
@@ -119,6 +120,14 @@ class User extends ActiveRecord implements IdentityInterface
      * @return bool Whether the user is an admin or not.
      */
     public function getIsAdmin()
+    {
+        return $this->getIsSuperUser();
+    }
+
+    /**
+     * @return bool Whether the user is a super user or not.
+     */
+    public function getIsSuperUser()
     {
         return
             (\Yii::$app->getAuthManager() && $this->module->adminPermission ?

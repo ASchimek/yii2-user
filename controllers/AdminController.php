@@ -341,7 +341,7 @@ class AdminController extends Controller
 
             Yii::$app->session->remove(self::ORIGINAL_USER_SESSION_KEY);
         } else {
-            if (!Yii::$app->user->identity->isAdmin) {
+            if (!Yii::$app->user->identity->isSuperUser) {
                 throw new ForbiddenHttpException;
             }
 
@@ -465,7 +465,7 @@ class AdminController extends Controller
     public function actionResendPassword($id)
     {
         $user = $this->findModel($id);
-        if ($user->isAdmin) {
+        if ($user->isSuperUser) {
             throw new ForbiddenHttpException(Yii::t('user', 'Password generation is not possible for admin users'));
         }
 
