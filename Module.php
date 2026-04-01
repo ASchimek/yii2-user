@@ -72,11 +72,11 @@ class Module extends BaseModule
     /** @var int Cost parameter used by the Blowfish hash algorithm. */
     public $cost = 10;
 
-    /** @var array An array of administrator's usernames. */
-    public $admins = [];
+    /** @var array An array of super user's usernames. */
+    public $superUsers = [];
 
-    /** @var string The Administrator permission name. */
-    public $adminPermission;
+    /** @var string The super user permission name. */
+    public $superUserPermission;
 
     /** @var array Mailer configuration */
     public $mailer = [];

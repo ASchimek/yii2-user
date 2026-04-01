@@ -130,9 +130,9 @@ class User extends ActiveRecord implements IdentityInterface
     public function getIsSuperUser()
     {
         return
-            (\Yii::$app->getAuthManager() && $this->module->adminPermission ?
-                \Yii::$app->authManager->checkAccess($this->id, $this->module->adminPermission) : false)
-            || in_array($this->username, $this->module->admins);
+            (\Yii::$app->getAuthManager() && $this->module->superUserPermission ?
+                \Yii::$app->authManager->checkAccess($this->id, $this->module->superUserPermission) : false)
+            || in_array($this->username, $this->module->superUsers);
     }
 
     /**
